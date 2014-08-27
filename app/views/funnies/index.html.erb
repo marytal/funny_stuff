@@ -1,0 +1,30 @@
+
+<a class='home' href= "/<%=@button%>">
+  Home sweeet home!
+</a>
+
+<br>
+
+<a href= "/funnies/new">
+  Add a picture!
+</a>
+
+<br>
+
+<% if @friendlist != nil %>
+  <% @friendlist.each do |buddy| %>
+    <a href="/friend/<%= buddy.name %>">
+      <%= buddy.name %>
+    </a>
+    <br>
+  <% end %>
+<% end %> 
+
+<br>
+
+<% @funnieslist.each do |funny| %>
+  <a href="/remove/<%= funny.id %>">
+    <img class="funny" src = "<%= funny.url %>" >
+  </a>
+<% end%>
+
